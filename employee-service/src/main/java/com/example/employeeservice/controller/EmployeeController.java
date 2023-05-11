@@ -5,6 +5,7 @@ import com.example.employeeservice.dto.EmployeeDto;
 import com.example.employeeservice.dto.Employees;
 import com.example.employeeservice.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ import java.util.stream.Collectors;
 public class EmployeeController {
     @Autowired
     private EmployeeDao employeeDao;
-
+    @GetMapping("/employees")
     public Employees listAllEmployees(){
         List<EmployeeDto> employeeDtoList=employeeDao.findAll()
                 .stream()

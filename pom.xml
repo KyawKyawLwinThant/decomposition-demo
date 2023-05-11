@@ -10,6 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>employee-service</module>
+        <module>address-service</module>
+        <module>web-ui</module>
     </modules>
 
     <properties>
