@@ -1,8 +1,11 @@
 package com.example.webui.dto;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class AddressDto {
     private int id;
     private String streetName;

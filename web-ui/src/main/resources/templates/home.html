@@ -25,6 +25,28 @@
         </tr>
        </tbody>
     </table>
+      <hr class="my-3">
+      <a th:href="@{/webui/employees}" class="btn btn-primary">Employees</a>
+      <table th:if="${!employees.isEmpty()}" class="table table-striped">
+          <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>CubicleNo</th>
+                <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="emp : ${employees}">
+                <td th:text="${emp.id}"></td>
+                <td th:text="${emp.firstName}"></td>
+                <td th:text="${emp.lastName}"></td>
+                <td th:text="${emp.cubicleNo}"></td>
+                <td th:text="${emp.salary}"></td>
+            </tr>
+          </tbody>
+      </table>
   </div>
 </main>
 </body>

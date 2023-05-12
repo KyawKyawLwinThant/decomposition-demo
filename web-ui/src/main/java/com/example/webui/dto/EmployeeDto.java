@@ -1,8 +1,11 @@
 package com.example.webui.dto;
 
-import lombok.Data;
 
-@Data
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class EmployeeDto {
     private Integer id;
     private String firstName;
@@ -10,7 +13,8 @@ public class EmployeeDto {
     private String cubicleNo;
     private double salary;
 
-    private final int count;
+    public EmployeeDto(){}
+
 
 
 
@@ -20,14 +24,9 @@ public class EmployeeDto {
         this.lastName = lastName;
         this.cubicleNo = cubicleNo;
         this.salary = salary;
-        count=4;
-    }
-
-    public EmployeeDto(){
-        final int test;
-        test=6;
-        count=7;
 
     }
+
+
 
 }

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+       - id: address-service
+         uri: lb://ADDRESS-SERVICE
+         predicates:
+           - Path=/address/**
+
+       - id: employee-service
+         uri: lb://EMPLOYEE-SERVICE
+         predicates:
+           - Path=/employee/**
+
+       - id: webui-service
+         uri: lb://WEB-UI-SERVICE
+         predicates:
+           - Path=/webui/**,/bootstrap/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka
+server:
+  port: 8080
+
